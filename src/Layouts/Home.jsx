@@ -3,6 +3,7 @@ import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import Banner from '../Components/Banner';
 import LatestVisas from '../Components/LatestVisas';
+import WhyChooseUs from '../Components/WhyChooseUs';
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <Banner></Banner>
             </div>
             <LatestVisas></LatestVisas>
+            <WhyChooseUs></WhyChooseUs>
             <Footer></Footer>
         </div>
     );
