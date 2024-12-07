@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const LatestVisas = () => {
     const [latestVisas, setLatestVisas] = useState([]);
+    const history = useHistory(); // hook for navigation
 
-    // fetch data json file
+    // fetch latest visas from backend api
     useEffect(() => {
-        fetch("/visa.json")
+        fetch("/api/latestVisas")
         .then((res) => res.json())
         .then((data) => setLatestVisas(data))
         .catch((error) => console.error(error));
@@ -13,6 +15,10 @@ const LatestVisas = () => {
    
        
     }, []);
+
+    const handleSeeAllVisas = () =>{
+      history.push('/all-visas'); // navigate all visas page
+    }
 
     return (
       <div>
@@ -41,6 +47,7 @@ const LatestVisas = () => {
           </div>
         ))}
         </div>
+        <button className='btn btn-secondary mt-4' onClick={handleSeeAllVisas}>See All Visas</button>
       </div>
     );
 };
