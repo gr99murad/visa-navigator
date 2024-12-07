@@ -1,9 +1,10 @@
 import React from 'react';
+import Navbar from '../Components/Navbar';
 
 const MyVisaApplication = () => {
     return (
         <div>
-            visa application
+            <Navbar></Navbar>
         </div>
     );
 };

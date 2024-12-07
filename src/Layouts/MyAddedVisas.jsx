@@ -1,9 +1,10 @@
 import React from 'react';
+import Navbar from '../Components/Navbar';
 
 const MyAddedVisas = () => {
     return (
         <div>
-            addedvisa
+            <Navbar></Navbar>
         </div>
     );
 };

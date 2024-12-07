@@ -40,6 +40,7 @@ const AuthProvider = ({children}) => {
         login,
         logout,
     };
+ 
 
     useEffect(() => {
        const unSubscribe = onAuthStateChanged(auth, currentUser =>{
