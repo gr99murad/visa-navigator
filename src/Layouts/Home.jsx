@@ -4,6 +4,7 @@ import Footer from '../Components/Footer';
 import Banner from '../Components/Banner';
 import LatestVisas from '../Components/LatestVisas';
 import WhyChooseUs from '../Components/WhyChooseUs';
+import Testimonials from '../Components/Testimonials';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             </div>
             <LatestVisas></LatestVisas>
             <WhyChooseUs></WhyChooseUs>
+            <Testimonials></Testimonials>
             <Footer></Footer>
         </div>
     );
