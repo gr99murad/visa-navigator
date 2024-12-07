@@ -1,0 +1,365 @@
+
+
+
+[
+    {
+      "CountryImage": "https://i.ibb.co.com/y5dDTh7/us-flag.gif",
+      "CountryName": "United States",
+      "Visa_type": "Tourist",
+      "Processing_time": "15 days",
+      "Required_documents": [
+        "Valid passport",
+        "Visa application form",
+        "Recent passport-sized photograph",
+        "Proof of financial means",
+        "Travel itinerary"
+      ],
+      "Description": "A visa for short-term tourism or visiting friends and family.",
+      "Age_restriction": "No restriction",
+      "Fee": "$160",
+      "Validity": "6 months",
+      "Application_method": "Online and Embassy submission"
+    },
+    {
+      "CountryImage": "https://i.ibb.co.com/0t45xSv/canada-flag.gif",
+      "CountryName": "Canada",
+      "Visa_type": "Student",
+      "Processing_time": "4 weeks",
+      "Required_documents": [
+        "Valid passport",
+        "Acceptance letter from a Canadian institution",
+        "Proof of financial support",
+        "Passport-sized photograph",
+        "Medical examination report"
+      ],
+      "Description": "For studying in Canada at a recognized institution.",
+      "Age_restriction": "16+",
+      "Fee": "$150",
+      "Validity": "Course duration + 3 months",
+      "Application_method": "Online and VFS Center submission"
+    },
+    {
+      "CountryImage": "https://i.ibb.co.com/s9K4h83/uk-flag.gif",
+      "CountryName": "United Kingdom",
+      "Visa_type": "Work",
+      "Processing_time": "3 weeks",
+      "Required_documents": [
+        "Valid passport",
+        "Job offer letter",
+        "Certificate of Sponsorship",
+        "Proof of English proficiency",
+        "Police clearance certificate"
+      ],
+      "Description": "Visa for employment in the UK.",
+      "Age_restriction": "18+",
+      "Fee": "$610",
+      "Validity": "5 years",
+      "Application_method": "Online"
+    },
+    {
+      "CountryImage": " https://i.ibb.co.com/99STwcL/australia-flag.gif",
+      "CountryName": "Australia",
+      "Visa_type": "Tourist",
+      "Processing_time": "20 days",
+      "Required_documents": [
+        "Valid passport",
+        "Visa application form",
+        "Travel itinerary",
+        "Proof of financial means",
+        "Recent passport-sized photograph"
+      ],
+      "Description": "For tourism or visiting friends and family in Australia.",
+      "Age_restriction": "No restriction",
+      "Fee": "$145",
+      "Validity": "3 months",
+      "Application_method": "Online"
+    },
+    {
+      "CountryImage": "https://i.ibb.co.com/wQmDHsv/japan-flag.gif",
+      "CountryName": "Japan",
+      "Visa_type": "Business",
+      "Processing_time": "10 days",
+      "Required_documents": [
+        "Valid passport",
+        "Visa application form",
+        "Invitation letter from Japanese company",
+        "Proof of financial means",
+        "Recent passport-sized photograph"
+      ],
+      "Description": "Visa for attending business meetings, conferences, or trade fairs.",
+      "Age_restriction": "No restriction",
+      "Fee": "$65",
+      "Validity": "90 days",
+      "Application_method": "Embassy submission"
+    },
+    {
+      "CountryImage": "https://i.ibb.co.com/3MSMChR/india-flag.gif",
+      "CountryName": "India",
+      "Visa_type": "Medical",
+      "Processing_time": "7 days",
+      "Required_documents": [
+        "Valid passport",
+        "Visa application form",
+        "Medical diagnosis letter",
+        "Proof of appointment with Indian hospital",
+        "Passport-sized photograph"
+      ],
+      "Description": "Visa for receiving medical treatment in India.",
+      "Age_restriction": "No restriction",
+      "Fee": "$80",
+      "Validity": "6 months",
+      "Application_method": "Online and Embassy submission"
+    },
+    {
+      "CountryImage": "https://i.ibb.co.com/4JypwMK/france-flag.gif",
+      "CountryName": "France",
+      "Visa_type": "Schengen",
+      "Processing_time": "2 weeks",
+      "Required_documents": [
+        "Valid passport",
+        "Visa application form",
+        "Travel itinerary",
+        "Proof of accommodation",
+        "Medical insurance"
+      ],
+      "Description": "Short-stay visa for visiting France and other Schengen countries.",
+      "Age_restriction": "No restriction",
+      "Fee": "€80",
+      "Validity": "90 days",
+      "Application_method": "VFS Center submission"
+    },
+    {
+      "CountryImage": "https://i.ibb.co.com/QXnXkC5/uae-flag.gif",
+      "CountryName": "United Arab Emirates",
+      "Visa_type": "Transit",
+      "Processing_time": "3 days",
+      "Required_documents": [
+        "Valid passport",
+        "Confirmed onward flight ticket",
+        "Passport-sized photograph"
+      ],
+      "Description": "Short-term visa for transit through UAE airports.",
+      "Age_restriction": "No restriction",
+      "Fee": "$50",
+      "Validity": "96 hours",
+      "Application_method": "Online through airlines"
+    },
+    {
+      "CountryImage": "https://i.ibb.co.com/Qj4tKcD/china-flag.gif",
+      "CountryName": "China",
+      "Visa_type": "Business",
+      "Processing_time": "8 days",
+      "Required_documents": [
+        "Valid passport",
+        "Invitation letter from Chinese company",
+        "Visa application form",
+        "Recent photograph",
+        "Proof of financial means"
+      ],
+      "Description": "For business-related activities in China.",
+      "Age_restriction": "No restriction",
+      "Fee": "$140",
+      "Validity": "90 days",
+      "Application_method": "Embassy submission"
+    },
+    {
+      "CountryImage": "https://i.ibb.co.com/H7z06r8/germany-flag.gif",
+      "CountryName": "Germany",
+      "Visa_type": "Tourist",
+      "Processing_time": "2 weeks",
+      "Required_documents": [
+        "Valid passport",
+        "Visa application form",
+        "Travel itinerary",
+        "Proof of financial means",
+        "Medical insurance"
+      ],
+      "Description": "Visa for visiting Germany for tourism purposes.",
+      "Age_restriction": "No restriction",
+      "Fee": "€80",
+      "Validity": "90 days",
+      "Application_method": "VFS Center submission"
+    },
+    {
+        "CountryImage": "https://i.ibb.co.com/vJKjLty/singapore-flag.gif",
+        "CountryName": "Singapore",
+        "Visa_type": "Tourist",
+        "Processing_time": "3 days",
+        "Required_documents": [
+          "Valid passport",
+          "Visa application form",
+          "Recent photograph",
+          "Proof of financial means",
+          "Travel itinerary"
+        ],
+        "Description": "Visa for short-term tourism in Singapore.",
+        "Age_restriction": "No restriction",
+        "Fee": "$30",
+        "Validity": "30 days",
+        "Application_method": "Online"
+      },
+      {
+        "CountryImage": "https://i.ibb.co.com/1mGRKCc/thailand-flag.gif",
+        "CountryName": "Thailand",
+        "Visa_type": "E-Visa",
+        "Processing_time": "5 days",
+        "Required_documents": [
+          "Valid passport",
+          "Visa application form",
+          "Hotel booking",
+          "Proof of financial means",
+          "Recent photograph"
+        ],
+        "Description": "E-Visa for tourism in Thailand.",
+        "Age_restriction": "No restriction",
+        "Fee": "$35",
+        "Validity": "60 days",
+        "Application_method": "Online"
+      },
+      {
+        "CountryImage": "https://i.ibb.co.com/z7f5Vvh/russia-flag.gif",
+        "CountryName": "Russia",
+        "Visa_type": "Business",
+        "Processing_time": "10 days",
+        "Required_documents": [
+          "Valid passport",
+          "Visa application form",
+          "Invitation from Russian company",
+          "Recent photograph",
+          "Proof of financial means"
+        ],
+        "Description": "Visa for business purposes in Russia.",
+        "Age_restriction": "No restriction",
+        "Fee": "$90",
+        "Validity": "90 days",
+        "Application_method": "Embassy submission"
+      },
+      {
+        "CountryImage": "https://i.ibb.co.com/vmJgcwD/malaysia-flag.gif",
+        "CountryName": "Malaysia",
+        "Visa_type": "Tourist",
+        "Processing_time": "3 days",
+        "Required_documents": [
+          "Valid passport",
+          "Visa application form",
+          "Proof of financial means",
+          "Hotel booking",
+          "Recent passport-sized photograph"
+        ],
+        "Description": "Visa for short-term tourism in Malaysia.",
+        "Age_restriction": "No restriction",
+        "Fee": "$45",
+        "Validity": "30 days",
+        "Application_method": "Online"
+      },
+      {
+        "CountryImage": "https://i.ibb.co.com/LJrzRSc/brazil-flag.gif",
+        "CountryName": "Brazil",
+        "Visa_type": "Tourist",
+        "Processing_time": "15 days",
+        "Required_documents": [
+          "Valid passport",
+          "Visa application form",
+          "Recent photograph",
+          "Proof of financial means",
+          "Travel itinerary"
+        ],
+        "Description": "Tourist visa for visiting Brazil.",
+        "Age_restriction": "No restriction",
+        "Fee": "$40",
+        "Validity": "90 days",
+        "Application_method": "Embassy submission"
+      },
+      {
+        "CountryImage": "https://i.ibb.co.com/jDRC006/italy-flag.gif",
+        "CountryName": "Italy",
+        "Visa_type": "Schengen",
+        "Processing_time": "2 weeks",
+        "Required_documents": [
+          "Valid passport",
+          "Visa application form",
+          "Travel itinerary",
+          "Medical insurance",
+          "Proof of accommodation"
+        ],
+        "Description": "Visa for tourism in Italy and other Schengen countries.",
+        "Age_restriction": "No restriction",
+        "Fee": "€80",
+        "Validity": "90 days",
+        "Application_method": "VFS Center submission"
+      },
+      {
+        "CountryImage": "https://i.ibb.co.com/gw3yQ8B/saudi-flag.gif",
+        "CountryName": "Saudi Arabia",
+        "Visa_type": "Pilgrimage",
+        "Processing_time": "7 days",
+        "Required_documents": [
+          "Valid passport",
+          "Visa application form",
+          "Proof of financial means",
+          "Pilgrimage permit",
+          "Medical insurance"
+        ],
+        "Description": "Visa for Hajj or Umrah pilgrimage.",
+        "Age_restriction": "No restriction",
+        "Fee": "$100",
+        "Validity": "30 days",
+        "Application_method": "Online or through travel agencies"
+      },
+      {
+        "CountryImage": "https://i.ibb.co.com/Tm0RL5c/south-korea-flag.gif",
+        "CountryName": "South Korea",
+        "Visa_type": "Tourist",
+        "Processing_time": "10 days",
+        "Required_documents": [
+          "Valid passport",
+          "Visa application form",
+          "Proof of financial means",
+          "Travel itinerary",
+          "Recent photograph"
+        ],
+        "Description": "Visa for short-term tourism in South Korea.",
+        "Age_restriction": "No restriction",
+        "Fee": "$40",
+        "Validity": "90 days",
+        "Application_method": "Embassy submission"
+      },
+      {
+        "CountryImage": "https://i.ibb.co.com/ggsX4MF/indonesia-flag.gif",
+        "CountryName": "Indonesia",
+        "Visa_type": "Tourist",
+        "Processing_time": "5 days",
+        "Required_documents": [
+          "Valid passport",
+          "Visa application form",
+          "Hotel booking",
+          "Proof of financial means",
+          "Travel itinerary"
+        ],
+        "Description": "Tourist visa for visiting Indonesia.",
+        "Age_restriction": "No restriction",
+        "Fee": "$50",
+        "Validity": "30 days",
+        "Application_method": "Online"
+      },
+      {
+        "CountryImage": "https://i.ibb.co.com/zNxCYw5/swizerland-flag.gif",
+        "CountryName": "Switzerland",
+        "Visa_type": "Schengen",
+        "Processing_time": "2 weeks",
+        "Required_documents": [
+          "Valid passport",
+          "Visa application form",
+          "Proof of accommodation",
+          "Medical insurance",
+          "Travel itinerary"
+        ],
+        "Description": "Schengen visa for visiting Switzerland.",
+        "Age_restriction": "No restriction",
+        "Fee": "€80",
+        "Validity": "90 days",
+        "Application_method": "VFS Center submission"
+      }
+
+  ]
+  
