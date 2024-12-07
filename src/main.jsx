@@ -15,6 +15,7 @@ import Login from './Authentication/Login.jsx';
 import Register from './Authentication/Register.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
+import ErrorPage from './Layouts/ErrorPage.jsx';
 
 
 
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element:<Home></Home>,
+    errorElement: <ErrorPage></ErrorPage>,
   },
   {
     path: "/allVisas",
