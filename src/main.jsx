@@ -16,6 +16,7 @@ import Register from './Authentication/Register.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
 import ErrorPage from './Layouts/ErrorPage.jsx';
+import VisaDetails from './Layouts/VisaDetails.jsx';
 
 
 
@@ -37,6 +38,16 @@ const router = createBrowserRouter([
       {
         path: "/addVisa",
         element:<AddVisa></AddVisa>,
+      },
+    ]
+  },
+  {
+    path: "/visaDetails",
+    element: <PrivateRoute></PrivateRoute>,
+    children:[
+      {
+        path: "/visaDetails",
+        element:<VisaDetails></VisaDetails>,
       },
     ]
   },

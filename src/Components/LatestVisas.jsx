@@ -40,7 +40,7 @@ const LatestVisas = () => {
               <p>Validity:{visa.Validity}</p>
               <p>Application Method:{visa.Application_method}</p>
               <div className="card-actions">
-                <button className="btn btn-primary">See Details</button>
+                <NavLink to="/visaDetails"><button className="btn btn-primary">See Details</button></NavLink>
               </div>
             </div>
           </div>
