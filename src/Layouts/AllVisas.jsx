@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Components/Navbar';
+import { useNavigate } from 'react-router-dom';
+import Footer from '../Components/Footer';
 
 const AllVisas = () => {
     const [allVisas, setAllVisas] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch("http://localhost:5000/api/visaData")
@@ -13,13 +16,17 @@ const AllVisas = () => {
    
        
     }, []);
+
+    const handleSeeDetails = (visaId) => {
+      navigate(`/visaDetails/${visaId}`);
+    }
     return (
       <div>
         <Navbar></Navbar>
 
         <div>
           <h2 className="text-3xl font-bold text-center mb-8">All Visas</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {allVisas.map((visa, index) => (
               <div
                 key={index}
@@ -40,13 +47,15 @@ const AllVisas = () => {
                   <p>Validity:{visa.Validity}</p>
                   <p>Application Method:{visa.Application_method}</p>
                   <div className="card-actions">
-                    <button className="btn btn-primary">See Details</button>
+                  <button onClick={() => handleSeeDetails(visa._id)} className="btn btn-primary">See Details</button>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
+
+        <Footer></Footer>
       </div>
     );
 };

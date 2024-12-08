@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from '../Components/Navbar';
 import Swal from 'sweetalert2'
+import Footer from '../Components/Footer';
 
 const AddVisa = () => {
     
@@ -48,50 +49,117 @@ const AddVisa = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <form onSubmit={handleAddVisa}>
-                <label>Country Image:</label>
-                <input type="text" name='CountryImage'   required />
-
-                <label>Country Name:</label>
-                <input type="text" name='CountryName'   required />
-
-                <label>Visa Type:</label>
-                <select name='Visa_type'   required>
-                    <option value="">Select Visa Type</option>
-                    <option value="Tourist Visa">Tourist Visa</option>
-                    <option value="Student Visa">Student Visa</option>
-                    <option value="Official Visa">Official Visa</option>
+            <div className='card bg-base-100 w-full shrink-0 shadow-2xl'>
+            <form onSubmit={handleAddVisa} className='card-body'>
 
 
-                </select>
-                <label>Processing Time:</label>
-                <input type="text" name='Processing_time'   required />
+                {/* form first row */}
+                <div className='flex flex-col lg:flex-row gap-5'>
+                        <div className="form-control flex-1">
+                            <label className="label">
+                                <span className="label-text">Country Image</span>
+                            </label>
+                            <input type="text" name='CountryImage'  className="input input-bordered" required />
+                        </div>
+                        <div className="form-control flex-1">
+                            <label className="label">
+                                <span className="label-text">Country Name</span>
+                            </label>
+                            <input type="text"name='CountryName'  className="input input-bordered" required />
+                        </div>
+                    </div>
+                    {/* form second row */}
+                    <div className='flex flex-col lg:flex-row gap-5'>
+                        <div className="form-control flex-1">
+                            <label className="label">
+                                <span className="label-text">Visa Type</span>
+                            </label>
+                            <select name='Visa_type'   required>
+                               <option value="">Select Visa Type</option>
+                               <option value="Tourist Visa">Tourist Visa</option>
+                               <option value="Student Visa">Student Visa</option>
+                               <option value="Official Visa">Official Visa</option>
+
+
+                           </select>
+                        </div>
+                        <div className="form-control flex-1">
+                            <label className="label">
+                                <span className="label-text">Processing Time</span>
+                            </label>
+                            <input type="text" name='Processing_time' className="input input-bordered" required />
+                        </div>
+                    </div>
+                    {/* form third row */}
+                    <div className='flex flex-col lg:flex-row gap-5'>
+                        <div className="form-control flex-1">
+                            <label className="label">
+                                <span className="label-text">Required Documents</span>
+                            </label>
+                            <input type="checkbox" name='Valid passport'   /> Valid  passport
+                            <input type="checkbox" name='Visa application form'   /> Visa application form
+                            <input type="checkbox" name='Recent passport-sized photograph'  /> Recent passport-sized photograph
+                        </div>
+                        <div className="form-control flex-1">
+                            <label className="label">
+                                <span className="label-text">Description</span>
+                            </label>
+                            <input type="text" name='Description' className="input input-bordered" required />
+                        </div>
+                    </div>
+
+
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Age Restriction</span>
+                        </label>
+                        <input type="number" name='Age_restriction' className="input input-bordered" required />
+
+                    </div>
+                    {/* form 4th  row */}
+                    <div className='flex flex-col lg:flex-row gap-5'>
+                       
+                        <div className="form-control flex-1">
+                            <label className="label">
+                                <span className="label-text">Fee</span>
+                            </label>
+                            <input type="number" name='Fee' className="input input-bordered" required />
+                        </div>
+                    </div>
+
+
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Validity</span>
+                        </label>
+                        <input type="text" name='Validity' className="input input-bordered" required />
+
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Application Method</span>
+                        </label>
+                        <input type="text" name='Application_method' className="input input-bordered" required />
+
+                    </div>
+                    <div className="form-control mt-6">
+                        <button className="btn btn-primary">Add Visa</button>
+                    </div>
+
+
+
+
+
+
+
+
                 
-                <label>Required Documents:</label>
-                <input type="checkbox" name='Valid passport'   /> Valid  passport
-                <input type="checkbox" name='Visa application form'   /> Visa application form
-                <input type="checkbox" name='Recent passport-sized photograph'  /> Recent passport-sized photograph
-
-
-                <label>Description:</label>
-                <textarea name='Description'   ></textarea>
-
-                <label>Age Restriction:</label>
-                <input type="number" name='Age_restriction'   required />
-
-                <label>Fee:</label>
-                <input type="number" name='Fee'  required />
-
-                <label>Validity:</label>
-                <input type="text" name='Validity'  required />
-
-                <label>Application Method:</label>
-                <input type="text" name='Application_method'   required />
-
-                <button type='submit'>Add Visa</button>
 
 
             </form>
+
+            <Footer></Footer>
+        </div>
         </div>
     );
 };

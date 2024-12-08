@@ -51,7 +51,7 @@ const LatestVisas = () => {
           </div>
         ))}
         </div>
-        <NavLink className="items-center" to="/allVisas"><button className='btn btn-secondary mt-4 ' >See All Visas</button></NavLink>
+        <NavLink className="items-center" to="/allVisas"><button className='btn btn-secondary mt-4 ml-44 md:ml-72 lg:ml-96 ' >See All Visas</button></NavLink>
       </div>
     );
 };

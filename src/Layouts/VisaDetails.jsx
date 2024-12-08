@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../hooks/useAuth';
 import { useNavigate, useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
-
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 const VisaDetails = () => {
     const {user} = useAuth();
@@ -47,7 +49,7 @@ const VisaDetails = () => {
             body: JSON.stringify(applicationData),
             
         })
-        .then(res => res.json())
+        .then((res) => res.json())
         .then((data) => {
             toast.success(data.message);
             setModalOpen(false);
@@ -55,8 +57,31 @@ const VisaDetails = () => {
         .catch((error) => toast.error('Error Applying for visa'));
     };
 
+
+    const modalStyles ={
+        position:'fixed',
+        top:0,
+        left:0,
+        right:0,
+        bottom:0,
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems:'center',
+        zIndex: 1000,
+    };
+
+    const modalContentStyles ={
+        backgroundColor: 'white',
+        padding: '20px',
+        borderRadius: '5px',
+        width:'400px',
+    };
+
     return (
       <div>
+        <Navbar></Navbar>
+        <ToastContainer></ToastContainer>
         <h2>Visa Details</h2>
         {visaDetails && (
           <div>
@@ -65,16 +90,14 @@ const VisaDetails = () => {
             <p>Processing Time:{visaDetails.Processing_time}</p>
             <p>Fee:{visaDetails.Fee}</p>
             <p>Validity:{visaDetails.Validity}</p>
-            <button onClick={() => 
-               
-                setModalOpen(true)
-            }>Apply for Visa</button>
+            <button onClick={() => setModalOpen(true) }>Apply for Visa</button>
           </div>
         )}
 
         {modalOpen && (
-            <div className='modal'>
-                <div className='modal-content'>
+            
+                <div style={modalStyles}>
+                <div style={modalContentStyles}>
                     <h3>Apply for Visa</h3>
                     <form onSubmit={handleApply}>
                         <input type="text" placeholder='First Name' value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
@@ -90,7 +113,9 @@ const VisaDetails = () => {
                 </div>
 
             </div>
+            
         )}
+        <Footer></Footer>
       </div>
     );
 };

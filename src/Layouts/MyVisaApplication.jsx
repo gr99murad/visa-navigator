@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Components/Navbar';
 import useAuth from '../hooks/useAuth';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Footer from '../Components/Footer';
 
 const MyVisaApplication = () => {
     const {user} = useAuth();
@@ -36,13 +38,15 @@ const MyVisaApplication = () => {
     return (
         <div>
             <Navbar></Navbar>
+            <ToastContainer></ToastContainer>
             <div>
                 <h1>My Visa Applications</h1>
                 {applications.length > 0 ? (
                     applications.map((app) => (
                         <div key= {app._id} className='visa-card'>
-                            <h3>{app.country}</h3>
-                            <p>Visa Type: {app.visa_type}</p>
+                            <img src={app.CountryImage} alt="" />
+                            <h3>{app.CountryName}</h3>
+                            <p>Visa Type: {app.Visa_type}</p>
                             <p>Fee:{app.fee}</p>
                             <p>Applied Date: {new Date(app.appliedDate).toLocaleDateString()}</p>
                             <p>Applicant:{app.firstName} {app.lastName}</p>
@@ -55,6 +59,9 @@ const MyVisaApplication = () => {
                 )}
                 
             </div>
+
+            <Footer></Footer>
+            
         </div>
     );
 };
