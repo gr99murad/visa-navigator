@@ -68,17 +68,39 @@ const MyAddedVisas = () => {
             });
 
             if(res.ok){
-                setShow(false);
+                setShowModal(false);
                 Swal.fire('Updated!','Visa information updated successfully.', 'success');
                 setVisas(visas.map(visa => (visa._id === updatedVisa._id ? updatedVisa : visa)));
             }else{
-                Swal.fire('Error!', 'Failed to update visa.', error);
+                Swal.fire('Error!', 'Failed to update visa.', 'error');
             }
 
         } catch(error){
             console.error("Error updating visa:",error);
             toast.error("Failed to update visa");
         }
+    };
+
+
+    const modalStyles ={
+        position:'fixed',
+        top:0,
+        left:0,
+        right:0,
+        bottom:0,
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems:'center',
+        zIndex: 1000,
+        display: 'block',
+    };
+
+    const modalContentStyles ={
+        backgroundColor: 'white',
+        padding: '20px',
+        borderRadius: '5px',
+        width:'400px',
     };
     return (
       <div>
@@ -87,7 +109,7 @@ const MyAddedVisas = () => {
 
         <div className="container mt-4">
           <h2>My Added Visas</h2>
-          <div className="row">
+          <div className="">
             {visas.map((visa) => (
               <div className="" key={visa._id}>
                 <div className="card bg-base-100 mx-auto w-64 lg:w-96 shadow-xl">
@@ -107,7 +129,7 @@ const MyAddedVisas = () => {
                     <p>Application Method: <b></b>{visa.Application_method}</p>
                     <div className="card-actions">
                       <button className="btn btn-primary" onClick={() => {setSelectedVisa(visa); setUpdatedVisa(visa); setShowModal(true); }}>Update</button> {''}
-                      <button className="btn btn-primary" onClick={() => handleDelete(visa._id)}>Delete</button>
+                      <button className="btn " onClick={() => handleDelete(visa._id)}>Delete</button>
 
                     </div>
                   </div>
@@ -120,28 +142,28 @@ const MyAddedVisas = () => {
 
         {/* update visa modal */}
         {showModal && (
-            <div className='modal' style={{display: 'block'}}>
-                <div className='modal-dialog'>
-                    <div className='modal-content'>
-                        <div className='modal-header'>
-                            <h5 className='modal-title'> Updated Visa </h5>
-                            <button type='button' className='close' onClick={setShowModal(false)}>&times;</button>
+            <div  style={modalStyles}>
+                <div className=''>
+                    <div style={modalContentStyles}>
+                        <div className=''>
+                            <h5 className=''> Updated Visa </h5>
+                            <button  className='' onClick={setShowModal(false)}>close</button>
 
                         </div>
-                        <div className='modal-body'>
+                        <div className=''>
                             {updatedVisa && (
                                 <form onSubmit={handleUpdate}>
-                                    <div className='form-group'>
+                                    <div className=''>
                                         <label> Country</label>
-                                        <input type="text" className='form-control' value={updatedVisa.CountryName} onChange={(e) => setUpdatedVisa({...updatedVisa, countryName: e.target.value}) }/>
+                                        <input type="text" className='' value={updatedVisa.CountryName} onChange={(e) => setUpdatedVisa({...updatedVisa, countryName: e.target.value}) }/>
 
 
                                     </div>
 
-                                    <div className='form-group'>
+                                    <div className=''>
                                         <label> Visa Type</label>
                                         <input type="text"
-                                        className='form-control' 
+                                        className='' 
                                         value={updatedVisa.Visa_type} 
                                         onChange={(e) => setUpdatedVisa({...updatedVisa, Visa_type: e.target.value}) }/>
                                         
