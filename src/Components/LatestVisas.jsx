@@ -8,7 +8,7 @@ const LatestVisas = () => {
 
     // fetch latest visas from backend api
     useEffect(() => {
-        fetch("http://localhost:5000/api/visaData")
+        fetch("http://localhost:5000/api/latestVisas")
         .then((res) => res.json())
         .then((data) => setLatestVisas(data))
         .catch((error) => console.error(error));

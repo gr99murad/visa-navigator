@@ -22,7 +22,7 @@ const AddVisa = () => {
         console.log(newVisa);
 
         //send data to  the server
-        fetch('http://localhost:5000/api/addVisa',{
+        fetch('http://localhost:5000/api/visaData',{
             method:'POST',
             headers:{
                 'content-type': 'application/json'
@@ -77,10 +77,10 @@ const AddVisa = () => {
                 <textarea name='Description'   ></textarea>
 
                 <label>Age Restriction:</label>
-                <input type="text" name='Age_restriction'   required />
+                <input type="number" name='Age_restriction'   required />
 
                 <label>Fee:</label>
-                <input type="text" name='Fee'  required />
+                <input type="number" name='Fee'  required />
 
                 <label>Validity:</label>
                 <input type="text" name='Validity'  required />
