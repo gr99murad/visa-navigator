@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 
 const LatestVisas = () => {
     const [latestVisas, setLatestVisas] = useState([]);
+    const navigate = useNavigate();
     
 
     // fetch latest visas from backend api
@@ -16,6 +17,10 @@ const LatestVisas = () => {
    
        
     }, []);
+
+    const handleSeeDetails = (visaId) => {
+      navigate(`/visaDetails/${visaId}`);
+    }
 
     
 
@@ -40,7 +45,7 @@ const LatestVisas = () => {
               <p>Validity:{visa.Validity}</p>
               <p>Application Method:{visa.Application_method}</p>
               <div className="card-actions">
-                <NavLink to="/visaDetails"><button className="btn btn-primary">See Details</button></NavLink>
+                <button onClick={() => handleSeeDetails(visa._id)} className="btn btn-primary">See Details</button>
               </div>
             </div>
           </div>

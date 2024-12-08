@@ -42,11 +42,11 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: "/visaDetails",
+    path: "/visaDetails/:visaId",
     element: <PrivateRoute></PrivateRoute>,
     children:[
       {
-        path: "/visaDetails",
+        path: "/visaDetails/:visaId",
         element:<VisaDetails></VisaDetails>,
       },
     ]

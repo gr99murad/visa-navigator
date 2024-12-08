@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../hooks/useAuth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 
 const VisaDetails = () => {
     const {user} = useAuth();
+    const{visaId} = useParams();
     const [visaDetails,setVisaDetails] = useState(null);
     const [modalOpen,setModalOpen] = useState(false);
     const [firstName,setFirstName] = useState('');
-    const [LastName,setLastName] = useState('');
+    const [lastName,setLastName] = useState('');
     const [fee,setFee] = useState('');
     const navigate = useNavigate();
 
@@ -17,22 +18,28 @@ const VisaDetails = () => {
         if(!user){
             navigate('/auth/login');
 
-        }
-        fetch('/api/visaData')
+        } else{
+            fetch(`http://localhost:5000/api/visaData/${visaId}`)
         .then(res => res.json())
-        .then(data => setVisaDetails(data[0]));
-    },[user,navigate]);
+        .then(data => setVisaDetails(data))
+        .catch((error) => console.error("Error fetching Visa:",error));
+        }
+        
+        
+    },[user,navigate,visaId]);
 
-    const handleApply = () =>{
+    const handleApply = (e) =>{
+        e.preventDefault();
+
         const applicationData = {
             email: user.email,
             firstName,
-            LastName,
+            lastName,
             visaId: visaDetails._id,
             fee,
         };
 
-        fetch('/api/applyVisa',{
+        fetch('http://localhost:5000/api/applyVisa',{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
@@ -58,7 +65,10 @@ const VisaDetails = () => {
             <p>Processing Time:{visaDetails.Processing_time}</p>
             <p>Fee:{visaDetails.Fee}</p>
             <p>Validity:{visaDetails.Validity}</p>
-            <button onClick={() => setModalOpen(true)}>Apply for Visa</button>
+            <button onClick={() => 
+               
+                setModalOpen(true)
+            }>Apply for Visa</button>
           </div>
         )}
 
@@ -66,9 +76,9 @@ const VisaDetails = () => {
             <div className='modal'>
                 <div className='modal-content'>
                     <h3>Apply for Visa</h3>
-                    <form>
+                    <form onSubmit={handleApply}>
                         <input type="text" placeholder='First Name' value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
-                        <input type="text" placeholder='Last Name' value={LastName} onChange={(e) => setLastName(e.target.value)} required />
+                        <input type="text" placeholder='Last Name' value={lastName} onChange={(e) => setLastName(e.target.value)} required />
                         <input type="number" placeholder='Fee' value={fee} onChange={(e) => setFee(e.target.value)} required />
 
                         <button type='submit'>Apply</button>
