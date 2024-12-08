@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../Components/Navbar';
+import Swal from 'sweetalert2'
 
 const AddVisa = () => {
     
@@ -31,6 +32,14 @@ const AddVisa = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'User Added Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
         })
 
 
@@ -68,10 +77,10 @@ const AddVisa = () => {
                 <textarea name='Description'   ></textarea>
 
                 <label>Age Restriction:</label>
-                <input type="number" name='Age_restriction'   required />
+                <input type="text" name='Age_restriction'   required />
 
                 <label>Fee:</label>
-                <input type="number" name='Fee'  required />
+                <input type="text" name='Fee'  required />
 
                 <label>Validity:</label>
                 <input type="text" name='Validity'  required />
