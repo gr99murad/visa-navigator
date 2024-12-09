@@ -1,8 +1,17 @@
-# React + Vite
+# GR_Visa Navigation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Visa Management System is a web application designed to streamline visa application processes. It allows users to apply for visas, manage applications, and perform administrative tasks seamlessly.
 
-Currently, two official plugins are available:
+## Features
+### Visa Application Submission: Users can easily submit visa applications with relevant details.
+### Application Tracking: Track the status of submitted applications in real-time.
+### CRUD Operations: Admins can create, read, update, and delete visa records.
+### Visa Details Display: View comprehensive details about submitted visa applications.
+### User Authentication: Secure login and registration for applicants and administrators
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Tech Stack
+
+Frontend: React.js
+Backend: Node.js, Express.js
+Database: MongoDB
+Version Control: Git & GitHub
