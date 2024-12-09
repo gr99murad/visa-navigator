@@ -37,6 +37,7 @@ const Home = () => {
     }
     return (
         <div>
+             <button onClick={toggleTheme} className='theme-toggle-btn'>Switch to {theme === 'light' ? 'Dark' : 'light'} Mode</button>
             <Navbar></Navbar>
             <div className='my-40'>
             <Banner></Banner>
@@ -48,7 +49,7 @@ const Home = () => {
 
             <ToastContainer position='top-right' autoClose={3000}></ToastContainer>
 
-            <button onClick={toggleTheme} className='theme-toggle-btn'>Switch to {theme === 'light' ? 'Dark' : 'light'} Mode</button>
+           
         </div>
     );
 };

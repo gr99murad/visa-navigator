@@ -1,4 +1,4 @@
-import { getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import React, { useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -13,10 +13,20 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const auth = getAuth();
+    const [loading, setLoading] = useState(true);
 
 
     // default to home
     const from = location.state?.from?.pathname || "/";
+
+
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if(user){
+        localStorage.setItem("userEmail", user.email);
+        navigate(from, {replace: true, state: {message: "Welcome Back!"}});
+      }
+      setLoading(false);
+    },[auth, navigate,from]);
 
     const handleLogin = (e) =>{
         e.preventDefault();
@@ -43,6 +53,8 @@ const Login = () => {
         })
         .catch((error) => toast.error(error.message));
     };
+
+    if(loading) return <p>Loading...</p>
     
   return (
     <div>
