@@ -17,14 +17,14 @@ const MyVisaApplication = () => {
 
     useEffect(() => {
         if(user){
-            fetch(`http://localhost:5000/api/myApplications?email=${user.email}`)
+            fetch(`https://visa-navigator-server-lovat.vercel.app/api/myApplications?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setApplications(data);
 
                 // fetching corresponding visa details for each application
                 data.forEach((app) => {
-                    fetch(`http://localhost:5000/api/visaData/${app.visaId}`)
+                    fetch(`https://visa-navigator-server-lovat.vercel.app/api/visaData/${app.visaId}`)
                     .then(res => res.json())
                     .then((visaData) =>{
                         setVisaDetailsMap((prev) => ({
@@ -42,7 +42,7 @@ const MyVisaApplication = () => {
     }, [user]);
 
     const handleCancel = (applicationId) => {
-        fetch('http://localhost:5000/api/cancelApplication',{
+        fetch('https://visa-navigator-server-lovat.vercel.app/api/cancelApplication',{
             method: 'DELETE',
             headers:{
                 'content-Type':'application/json'

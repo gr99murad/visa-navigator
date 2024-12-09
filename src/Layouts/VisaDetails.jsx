@@ -21,7 +21,7 @@ const VisaDetails = () => {
             navigate('/auth/login');
 
         } else{
-            fetch(`http://localhost:5000/api/visaData/${visaId}`)
+            fetch(`https://visa-navigator-server-lovat.vercel.app/api/visaData/${visaId}`)
         .then(res => res.json())
         .then(data => setVisaDetails(data))
         .catch((error) => console.error("Error fetching Visa:",error));
@@ -41,7 +41,7 @@ const VisaDetails = () => {
             fee: visaDetails.Fee,
         };
 
-        fetch('http://localhost:5000/api/applyVisa',{
+        fetch('https://visa-navigator-server-lovat.vercel.app/api/applyVisa',{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'

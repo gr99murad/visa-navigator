@@ -14,7 +14,7 @@ const AllVisas = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/visaData")
+        fetch("https://visa-navigator-server-lovat.vercel.app/api/visaData")
         .then((res) => res.json())
         .then((data) => {
           setAllVisas(data);

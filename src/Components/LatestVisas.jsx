@@ -10,7 +10,7 @@ const LatestVisas = () => {
 
     // fetch latest visas from backend api
     useEffect(() => {
-        fetch("http://localhost:5000/api/latestVisas")
+        fetch("https://visa-navigator-server-lovat.vercel.app/api/latestVisas")
         .then((res) => res.json())
         .then((data) => setLatestVisas(data))
         .catch((error) => console.error(error));

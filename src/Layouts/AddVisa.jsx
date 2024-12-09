@@ -36,7 +36,7 @@ const AddVisa = () => {
         // console.log(newVisa);
 
         //send data to  the server
-        fetch('http://localhost:5000/api/visaData',{
+        fetch('https://visa-navigator-server-lovat.vercel.app/api/visaData',{
             method:'POST',
             headers:{
                 'content-type': 'application/json'

@@ -19,7 +19,7 @@ const MyAddedVisas = () => {
             toast.error("please log in to view your added visas.");
             return;
         }
-        fetch(`http://localhost:5000/api/myAddedVisas?email=${email}`)
+        fetch(`https://visa-navigator-server-lovat.vercel.app/api/myAddedVisas?email=${email}`)
         .then(res => res.json())
         .then(data => setVisas(data))
         .catch(error => {
@@ -40,7 +40,7 @@ const MyAddedVisas = () => {
         });
         if(result.isConfirmed){
             try{
-                const res = await fetch(`http://localhost:5000/api/visaData/${id}`,{
+                const res = await fetch(`https://visa-navigator-server-lovat.vercel.app/api/visaData/${id}`,{
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json'
@@ -63,7 +63,7 @@ const MyAddedVisas = () => {
     const handleUpdate = async(e) => {
         e.preventDefault();
         try{
-            const res = await fetch(`http://localhost:5000/api/visaData/${updatedVisa._id}`,{
+            const res = await fetch(`https://visa-navigator-server-lovat.vercel.app/api/visaData/${updatedVisa._id}`,{
                 method:'PUT',
                 headers:{
                     'Content-Type': 'application/json'
