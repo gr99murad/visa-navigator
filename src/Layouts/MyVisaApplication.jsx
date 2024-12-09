@@ -12,6 +12,8 @@ const MyVisaApplication = () => {
 
     const [applications, setApplications] = useState([]);
     const [visaDetailsMap, setVisaDetailsMap] = useState({});
+    const [searchQuery, setSearchQuery] = useState('');
+    const [filteredApp, setFilteredApp] = useState([]);
 
     useEffect(() => {
         if(user){
@@ -54,17 +56,42 @@ const MyVisaApplication = () => {
         })
         .catch((error) => toast.error('Error canceling application'));
     };
+
+    const handleSearch = () => {
+        const filtered = applications.filter((app) => {
+            const visaDetails = visaDetailsMap[app._id];
+            return visaDetails && visaDetails.CountryName.toLowerCase().includes(searchQuery.toLowerCase());
+        });
+        setFilteredApp(filtered);
+    };
+    // display the filtrered applications  if any , or all applications
+    const applicationsToDisplay = filteredApp.length > 0 ? filteredApp : applications;
     return (
         <div>
             <Navbar></Navbar>
             <ToastContainer></ToastContainer>
             <div>
                 <h1 className='text-3xl font-bold text-center mb-10'>My Visa Applications</h1>
+
+
+                {/* search input and button */}
+
+                <div className='text-center mb-4'>
+                    <input 
+                    type="text" 
+                    className='input input-bordered w-1/2'
+                    placeholder={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    
+                    />
+                    <button className='btn btn-primary ml-2' onClick={handleSearch}>Search</button>
+
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
 
-                {applications.length > 0 ? (
-                    applications.map((app) => {
+                {applicationsToDisplay.length > 0 ? (
+                    applicationsToDisplay.map((app) => {
 
                         const visaDetails = visaDetailsMap[app._id];
 

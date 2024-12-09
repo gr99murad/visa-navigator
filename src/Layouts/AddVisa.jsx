@@ -18,9 +18,22 @@ const AddVisa = () => {
         const Validity = form.Validity.value;
 
         const Application_method = form.Application_method.value;
+        const email = localStorage.getItem("userEmail");
 
-        const newVisa = {CountryImage,CountryName,Visa_type,Processing_time,Description,Age_restriction,Fee,Validity}
-        console.log(newVisa);
+        const newVisa = {
+            CountryImage,
+            CountryName,
+            Visa_type,
+            Processing_time,
+            Description,
+            Age_restriction,
+            Fee,
+            Validity,
+            Application_method,
+            email,
+
+        }
+        // console.log(newVisa);
 
         //send data to  the server
         fetch('http://localhost:5000/api/visaData',{
@@ -32,7 +45,7 @@ const AddVisa = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             if(data.insertedId){
                 Swal.fire({
                     title: 'Success!',

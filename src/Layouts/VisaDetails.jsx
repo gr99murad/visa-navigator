@@ -98,6 +98,7 @@ const VisaDetails = () => {
             <p>Processing Time:{visaDetails.Processing_time}</p>
             <p>Fee:{visaDetails.Fee}</p>
             <p>Validity:{visaDetails.Validity}</p>
+            <p>Application Method:{visaDetails.Application_method}</p>
             <button className='btn my-4' onClick={() => setModalOpen(true) }>Apply for Visa</button>
           </div>
         )}
@@ -112,7 +113,7 @@ const VisaDetails = () => {
                         <input type="email" className="input input-bordered" value={user.email} disabled />
                         <input type="text" className="input input-bordered" placeholder='First Name' value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
                         <input type="text" className="input input-bordered" placeholder='Last Name' value={lastName} onChange={(e) => setLastName(e.target.value)} required />
-                        <input type="number" className="input input-bordered" placeholder='Fee' value={visaDetails?.Fee || ''} required />
+                        <input type="number" className="input input-bordered" placeholder={visaDetails?.Fee || ''} value={visaDetails?.Fee || ''}  />
 
                         <button className='btn btn-success' type='submit'>Apply</button>
 

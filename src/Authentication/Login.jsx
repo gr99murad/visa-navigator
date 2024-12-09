@@ -21,7 +21,9 @@ const Login = () => {
     const handleLogin = (e) =>{
         e.preventDefault();
         signInWithEmailAndPassword(auth,email,password)
-        .then(() => {
+        .then((userCredential) => {
+          const userEmail = userCredential.user.email;
+          localStorage.setItem("userEmail",userEmail); //save to local storage
          
           // navigate to the desired route
           navigate (from, {replace: true , state:{message:"Login Successfully"}});  
@@ -33,7 +35,9 @@ const Login = () => {
     const handleGoogleSignIn = () =>{
         const provider = new GoogleAuthProvider();
         signInWithPopup(auth,provider)
-        .then(() => {
+        .then((result) => {
+          const userEmail = result.user.email;
+          localStorage.setItem("userEmail",userEmail);
           
           navigate (from, {replace: true , state:{message:"Google Login Successfully"}});   
         })

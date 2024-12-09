@@ -11,10 +11,15 @@ const MyAddedVisas = () => {
     const [showModal, setShowModal] = useState(false);
     const [updatedVisa, setUpdatedVisa] = useState({});
 
-    const email = "user@example.com";
+    const email = localStorage.getItem("userEmail");
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/myApplications?email=${email}`)
+
+        if(!email){
+            toast.error("please log in to view your added visas.");
+            return;
+        }
+        fetch(`http://localhost:5000/api/myAddedVisas?email=${email}`)
         .then(res => res.json())
         .then(data => setVisas(data))
         .catch(error => {
@@ -35,12 +40,12 @@ const MyAddedVisas = () => {
         });
         if(result.isConfirmed){
             try{
-                const res = await fetch('http://localhost:5000/api/cancelApplication',{
-                    method: 'Delete',
+                const res = await fetch(`http://localhost:5000/api/visaData/${id}`,{
+                    method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({applicationId: id})
+                    body: JSON.stringify({applicationId: id}),
                 });
                 if(res.ok){
                     setVisas(visas.filter(visa => visa._id !== id));
@@ -69,8 +74,8 @@ const MyAddedVisas = () => {
 
             if(res.ok){
                 setShowModal(false);
-                Swal.fire('Updated!','Visa information updated successfully.', 'success');
                 setVisas(visas.map(visa => (visa._id === updatedVisa._id ? updatedVisa : visa)));
+                Swal.fire('Updated!','Visa information updated successfully.', 'success');
             }else{
                 Swal.fire('Error!', 'Failed to update visa.', 'error');
             }
@@ -108,10 +113,10 @@ const MyAddedVisas = () => {
         <ToastContainer></ToastContainer>
 
         <div className="container mt-4">
-          <h2>My Added Visas</h2>
-          <div className="">
+          <h2 className='text-3xl font-bold text-center'>My Added Visas</h2>
+          <div >
             {visas.map((visa) => (
-              <div className="" key={visa._id}>
+              <div key={visa._id}>
                 <div className="card bg-base-100 mx-auto w-64 lg:w-96 shadow-xl">
                   <figure className="px-10 pt-10">
                     <img
@@ -122,13 +127,17 @@ const MyAddedVisas = () => {
                   </figure>
                   <div className="card-body items-center text-center">
                     <h2 className="card-title">{visa.CountryName}</h2>
-                    <p>Visa Type : <b></b>{visa.Visa_type}</p>
-                    <p>Processing Time: <b></b>{visa.Processing_time}</p>
-                    <p>Fee: <b></b>{visa.Fee}</p>
-                    <p>Validity: <b></b>{visa.Validity}</p>
-                    <p>Application Method: <b></b>{visa.Application_method}</p>
+                    <p>Visa Type : {visa.Visa_type}</p>
+                    <p>Processing Time:{visa.Processing_time}</p>
+                    <p>Fee:{visa.Fee}</p>
+                    <p>Validity:{visa.Validity}</p>
+                    <p>Application Method:{visa.Application_method}</p>
                     <div className="card-actions">
-                      <button className="btn btn-primary" onClick={() => {setSelectedVisa(visa); setUpdatedVisa(visa); setShowModal(true); }}>Update</button> {''}
+                      <button 
+                      className="btn btn-primary" 
+                      onClick={() => {setSelectedVisa(visa); setUpdatedVisa(visa); setShowModal(true); }}>
+                        Update
+                      </button> {''}
                       <button className="btn " onClick={() => handleDelete(visa._id)}>Delete</button>
 
                     </div>
@@ -143,11 +152,11 @@ const MyAddedVisas = () => {
         {/* update visa modal */}
         {showModal && (
             <div  style={modalStyles}>
-                <div className=''>
-                    <div style={modalContentStyles}>
-                        <div className=''>
+                <div style={modalContentStyles}>
+                    
+                        <div>
                             <h5 className=''> Updated Visa </h5>
-                            <button  className='' onClick={setShowModal(false)}>close</button>
+                            <button  className='' onClick={() =>setShowModal(false)}>close</button>
 
                         </div>
                         <div className=''>
@@ -155,7 +164,7 @@ const MyAddedVisas = () => {
                                 <form onSubmit={handleUpdate}>
                                     <div className=''>
                                         <label> Country</label>
-                                        <input type="text" className='' value={updatedVisa.CountryName} onChange={(e) => setUpdatedVisa({...updatedVisa, countryName: e.target.value}) }/>
+                                        <input type="text" className='' value={updatedVisa.CountryName} onChange={(e) => setUpdatedVisa({...updatedVisa, CountryName: e.target.value}) }/>
 
 
                                     </div>
@@ -166,6 +175,47 @@ const MyAddedVisas = () => {
                                         className='' 
                                         value={updatedVisa.Visa_type} 
                                         onChange={(e) => setUpdatedVisa({...updatedVisa, Visa_type: e.target.value}) }/>
+                                        
+
+                                    </div>
+
+
+                                    <div className=''>
+                                        <label> Processing Time</label>
+                                        <input type="text"
+                                        className='' 
+                                        value={updatedVisa.Processing_time} 
+                                        onChange={(e) => setUpdatedVisa({...updatedVisa, Processing_time: e.target.value}) }/>
+                                        
+
+                                    </div>
+
+                                    <div className=''>
+                                        <label> Fee</label>
+                                        <input type="text"
+                                        className='' 
+                                        value={updatedVisa.Fee} 
+                                        onChange={(e) => setUpdatedVisa({...updatedVisa, Fee: e.target.value}) }/>
+                                        
+
+                                    </div>
+
+                                    <div className=''>
+                                        <label>Validity</label>
+                                        <input type="text"
+                                        className='' 
+                                        value={updatedVisa.Validity} 
+                                        onChange={(e) => setUpdatedVisa({...updatedVisa, Validity: e.target.value}) }/>
+                                        
+
+                                    </div>
+
+                                    <div className=''>
+                                        <label>Application Method</label>
+                                        <input type="text"
+                                        className='' 
+                                        value={updatedVisa.Application_method} 
+                                        onChange={(e) => setUpdatedVisa({...updatedVisa, Application_method: e.target.value}) }/>
                                         
 
                                     </div>
@@ -180,7 +230,7 @@ const MyAddedVisas = () => {
 
                 </div>
 
-            </div>
+            
         )}
 
         <Footer></Footer>
