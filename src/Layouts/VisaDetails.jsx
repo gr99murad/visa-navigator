@@ -38,7 +38,7 @@ const VisaDetails = () => {
             firstName,
             lastName,
             visaId: visaDetails._id,
-            fee,
+            fee: visaDetails.Fee,
         };
 
         fetch('http://localhost:5000/api/applyVisa',{
@@ -82,33 +82,43 @@ const VisaDetails = () => {
       <div>
         <Navbar></Navbar>
         <ToastContainer></ToastContainer>
-        <h2>Visa Details</h2>
-        {visaDetails && (
-          <div>
-            <h2>{visaDetails.countryName}</h2>
+        <h2 className='text-3xl font-bold text-center mb-10'>Visa Details</h2>
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+       {visaDetails && (
+          <div className='card bg-base-100 mx-auto w-64 lg:w-96 shadow-xl p-6'>
+            <figure className="px-10 pt-10">
+                  <img
+                    src={visaDetails.CountryImage}
+                    alt={visaDetails.CountryName}
+                    className="rounded-xl"
+                  />
+                </figure>
+            <h2>{visaDetails.CountryName}</h2>
             <p>Visa Type :{visaDetails.Visa_type}</p>
             <p>Processing Time:{visaDetails.Processing_time}</p>
             <p>Fee:{visaDetails.Fee}</p>
             <p>Validity:{visaDetails.Validity}</p>
-            <button onClick={() => setModalOpen(true) }>Apply for Visa</button>
+            <button className='btn my-4' onClick={() => setModalOpen(true) }>Apply for Visa</button>
           </div>
         )}
 
+       </div>
         {modalOpen && (
             
                 <div style={modalStyles}>
                 <div style={modalContentStyles}>
-                    <h3>Apply for Visa</h3>
-                    <form onSubmit={handleApply}>
-                        <input type="text" placeholder='First Name' value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
-                        <input type="text" placeholder='Last Name' value={lastName} onChange={(e) => setLastName(e.target.value)} required />
-                        <input type="number" placeholder='Fee' value={fee} onChange={(e) => setFee(e.target.value)} required />
+                    <h3 className='text-3xl font-bold text-center mb-10'>Apply for Visa</h3>
+                    <form onSubmit={handleApply} className='grid gap-5'>
+                        <input type="email" className="input input-bordered" value={user.email} disabled />
+                        <input type="text" className="input input-bordered" placeholder='First Name' value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
+                        <input type="text" className="input input-bordered" placeholder='Last Name' value={lastName} onChange={(e) => setLastName(e.target.value)} required />
+                        <input type="number" className="input input-bordered" placeholder='Fee' value={visaDetails?.Fee || ''} required />
 
-                        <button type='submit'>Apply</button>
+                        <button className='btn btn-success' type='submit'>Apply</button>
 
 
                     </form>
-                    <button onClick={() => setModalOpen(false)}>Close</button>
+                    <button className='btn btn-warning my-10' onClick={() => setModalOpen(false)}>Close</button>
 
                 </div>
 
