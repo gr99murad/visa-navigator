@@ -11,6 +11,7 @@ const AllVisas = () => {
     const navigate = useNavigate();
     const [filteredVisas, setFilteredVisas] = useState([]);
     const [visaType, setVisaType] = useState('All');
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch("http://localhost:5000/api/visaData")
@@ -18,8 +19,12 @@ const AllVisas = () => {
         .then((data) => {
           setAllVisas(data);
           setFilteredVisas(data);
+          setLoading(false);
         })
-        .catch((error) => console.error(error));
+        .catch((error) => {
+          console.error(error);
+          setLoading(false);
+        });
 
    
        
@@ -80,8 +85,13 @@ const AllVisas = () => {
         
 
         <div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {loading ? (
+            <div className='flex justify-center items-center h-64'>
+              <div className='loader border-t-4 border-blue-500 rounded-full w-16 h-16 animate-spin'></div>
+
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {filteredVisas.map((visa, index) => (
               <Zoom
                 key={index}
@@ -108,6 +118,8 @@ const AllVisas = () => {
               </Zoom>
             ))}
           </div>
+          )}
+          
         </div>
 
         <Footer></Footer>

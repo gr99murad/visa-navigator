@@ -6,6 +6,7 @@ const LatestVisas = () => {
     const [latestVisas, setLatestVisas] = useState([]);
     const navigate = useNavigate();
     
+    
 
     // fetch latest visas from backend api
     useEffect(() => {
