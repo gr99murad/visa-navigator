@@ -1,17 +1,48 @@
-# GR_Visa Navigation
 
-The Visa Management System is a web application designed to streamline visa application processes. It allows users to apply for visas, manage applications, and perform administrative tasks seamlessly.
+<!-- GR_Visa Navigation - Visa Management System -->
 
-## Features
-### Visa Application Submission: Users can easily submit visa applications with relevant details.
-### Application Tracking: Track the status of submitted applications in real-time.
-### CRUD Operations: Admins can create, read, update, and delete visa records.
-### Visa Details Display: View comprehensive details about submitted visa applications.
-### User Authentication: Secure login and registration for applicants and administrators
+<h1>🛂 GR_Visa Navigation</h1>
 
-##  Tech Stack
+<p>
+  The Visa Management System is a web application designed to streamline visa application processes. 
+  It allows users to apply for visas, manage applications, and perform administrative tasks seamlessly.
+</p>
 
-Frontend: React.js
-Backend: Node.js, Express.js
-Database: MongoDB
-Version Control: Git & GitHub
+<h2>🚀 Features</h2>
+
+<ul>
+  <li>📄 <strong>Visa Application Submission</strong>: Users can easily submit visa applications with relevant details.</li>
+  <li>📡 <strong>Application Tracking</strong>: Track the status of submitted applications in real-time.</li>
+  <li>🛠️ <strong>CRUD Operations</strong>: Admins can create, read, update, and delete visa records.</li>
+  <li>📋 <strong>Visa Details Display</strong>: View comprehensive details about submitted visa applications.</li>
+  <li>🔐 <strong>User Authentication</strong>: Secure login and registration for applicants and administrators.</li>
+</ul>
+
+<hr>
+
+<h2>🛠️ Tech Stack</h2>
+
+<h3>Frontend</h3>
+<ul>
+  <li>⚛️ React.js</li>
+</ul>
+
+<h3>Backend</h3>
+<ul>
+  <li>🟢 Node.js</li>
+  <li>⚡ Express.js</li>
+</ul>
+
+<h3>Database</h3>
+<ul>
+  <li>🛢️ MongoDB</li>
+</ul>
+
+<h3>Version Control</h3>
+<ul>
+  <li>🐙 GitHub</li>
+</ul>
+
+<hr>
+
+<p>📌 <strong>Feel free to contribute, explore, and enhance GR_Visa Navigation!</strong> 🎉</p>
