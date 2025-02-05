@@ -82,8 +82,7 @@
   
   <li><strong>Run the Development Server:</strong> 
     Start the development server by running:
-    <pre><code>nodemon index.js</code></pre>
-    The app will be accessible at <code>http://localhost:3000</code>.
+    <pre><code>npm run dev</code></pre>
   </li>
   
   <li><strong>Start the Backend Server:</strong> 
