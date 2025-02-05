@@ -58,7 +58,6 @@
   <li>⚛️ <strong>React</strong>: A JavaScript library for building user interfaces.</li>
   <li>⚡ <strong>Express.js</strong>: A web application framework for Node.js.</li>
   <li>🛢️ <strong>MongoDB</strong>: NoSQL database for storing visa application data.</li>
-  <li>🔐 <strong>JWT (JSON Web Tokens)</strong>: For user authentication and session management.</li>
   <li>📡 <strong>Axios</strong>: For making HTTP requests to the backend API.</li>
   <li>🐙 <strong>Git</strong>: Version control system for tracking changes.</li>
 </ul>
