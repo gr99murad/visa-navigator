@@ -1,4 +1,3 @@
-
 <!-- GR_Visa Navigation - Visa Management System -->
 
 <div align="center">
@@ -50,6 +49,52 @@
 <ul>
   <li>🐙 GitHub</li>
 </ul>
+
+<hr>
+
+<h2>📦 NPM Packages Used</h2>
+
+<ul>
+  <li>⚛️ <strong>React</strong>: A JavaScript library for building user interfaces.</li>
+  <li>⚡ <strong>Express.js</strong>: A web application framework for Node.js.</li>
+  <li>🛢️ <strong>MongoDB</strong>: NoSQL database for storing visa application data.</li>
+  <li>🔐 <strong>JWT (JSON Web Tokens)</strong>: For user authentication and session management.</li>
+  <li>📡 <strong>Axios</strong>: For making HTTP requests to the backend API.</li>
+  <li>🐙 <strong>Git</strong>: Version control system for tracking changes.</li>
+</ul>
+
+<hr>
+
+<h2>🚀 Running the Project Locally</h2>
+
+<p>To run the GR_Visa Navigation project locally, follow these steps:</p>
+
+<ol>
+  <li><strong>Clone the Repository:</strong>
+    <pre><code>git clone https://github.com/gr99murad/GR_Visa-Navigation.git</code></pre>
+  </li>
+  
+  <li><strong>Install Dependencies:</strong> 
+    Navigate to the project folder and install the necessary dependencies by running:
+    <pre><code>npm i</code></pre>
+  </li>
+  
+  
+  <li><strong>Run the Development Server:</strong> 
+    Start the development server by running:
+    <pre><code>nodemon index.js</code></pre>
+    The app will be accessible at <code>http://localhost:3000</code>.
+  </li>
+  
+  <li><strong>Start the Backend Server:</strong> 
+    In a separate terminal, navigate to the backend directory and run:
+    <pre><code>nodemon index.js</code></pre>
+    The backend server will be running at <code>http://localhost:5000</code>.
+  </li>
+
+  <li><strong>Enjoy!</strong> local instance of GR_Visa Navigation should now be up and running.
+  </li>
+</ol>
 
 <hr>
 
