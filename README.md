@@ -1,7 +1,15 @@
 
 <!-- GR_Visa Navigation - Visa Management System -->
 
+<div align="center">
+  <img width="1000" src="https://i.ibb.co.com/yFD5Kfyd/Screenshot-2025-02-05-174146.png"  />
+</div>
+
 <h1>🛂 GR_Visa Navigation</h1>
+<p>
+  🔗 <strong>Live Site URL:</strong> 
+  <a href="https://visa-navigator-60772.web.app/" target="_blank">Visa-navigator</a>
+</p>
 
 <p>
   The Visa Management System is a web application designed to streamline visa application processes. 
