@@ -79,10 +79,7 @@
   </li>
   
   
-  <li><strong>Run the Development Server:</strong> 
-    Start the development server by running:
-    <pre><code>npm run dev</code></pre>
-  </li>
+
   
   <li><strong>Start the Backend Server:</strong> 
     In a separate terminal, navigate to the backend directory and run:
